@@ -3,7 +3,14 @@ html {
     width: 100%
 }
 
-/*Font List*/
+body {
+    background-color: rgb(1, 92, 185);
+}
+
+/*Fonts*/
+h1, h2, h3, p {
+    color: rgb(255, 255, 255);
+}
 
 h1 {
     font-family: 'Courier New', monospace;
@@ -11,4 +18,14 @@ h1 {
 
 p {
     font-family: Verdana, sans-serif;
+}
+
+/*Divs*/
+.header {
+    background-color: rgb(35, 31, 32);
+    text-align: center;
+}
+
+.post {
+    background-color: rgb(35, 31, 32);
 }
