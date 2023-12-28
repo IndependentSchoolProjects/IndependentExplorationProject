@@ -8,11 +8,15 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p {
+h1, h2, h3, p, a:link {
     color: rgb(255, 255, 255);
 }
 
-h1 {
+a:visited, a:hover {
+    color: rgb(86, 188, 138);
+}
+
+h1, a {
     font-family: 'Courier New', monospace;
 }
 
