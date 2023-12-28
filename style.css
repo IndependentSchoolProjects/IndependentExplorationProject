@@ -8,12 +8,16 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p, a:link {
+h1, h2, h3, p {
     color: rgb(255, 255, 255);
 }
 
-a:visited, a:hover {
+a:link {
     color: rgb(86, 188, 138);
+}
+
+a:visited, a:hover {
+    color: rgb(167, 125, 194);
 }
 
 h1, a {
