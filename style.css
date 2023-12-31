@@ -8,7 +8,7 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p, a:visited, a:hover {
+h1, h2, h3, p, a:visited, a:hover, label {
     color: rgb(255, 255, 255);
 }
 
@@ -20,7 +20,7 @@ h1, h2, a {
     font-family: 'Courier New', monospace;
 }
 
-h3, p {
+h3, p, label {
     font-family: Verdana, sans-serif;
 }
 
