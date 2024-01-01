@@ -8,15 +8,15 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p, a:visited, a:hover, label {
+h1, h2, h3, p, a:visited, label, input {
     color: rgb(255, 255, 255);
 }
 
-a:link {
+a:link, a:hover {
     color: rgb(86, 188, 138);
 }
 
-h1, h2, a {
+h1, h2, a, input {
     font-family: 'Courier New', monospace;
 }
 
