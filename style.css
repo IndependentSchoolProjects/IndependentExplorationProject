@@ -8,11 +8,11 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p, a:visited, label{
+h1, h2, h3, p, a:link, a:visited, label{
     color: rgb(255, 255, 255);
 }
 
-a:link, a:hover {
+a:hover {
     color: rgb(1, 92, 185);
 }
 
@@ -31,5 +31,5 @@ h3, p, label {
 }
 
 .post {
-    background-color: rgb(154, 162, 174);
+    background-color: rgb(35, 31, 32;
 }
