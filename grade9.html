@@ -78,6 +78,7 @@
 
     import { getDatabase, ref, set } from "firebase/database";
     function writeUserData() {
+      console.log("Hello World")
       const db = getDatabase();
       set(ref(db, "users/" + messagingSenderId), {
         title: document.getElementById("title").value,
