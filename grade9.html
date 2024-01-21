@@ -81,10 +81,11 @@
 
     function writeUserData() {
       console.log("Hello World")
-      db.ref('g9/post/text').set({
+      db.ref('g9/post').set({
         title: document.getElementById("title").value,
         text: document.getElementById("text").value,
       });
+      return false;
     }
   </script>
 </body>
