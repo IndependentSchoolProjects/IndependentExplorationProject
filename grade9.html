@@ -28,13 +28,13 @@
       <label for="title">
         Post Title
       </label>
-      <input name="title" id="foo">
+      <input name="title" id="title">
       <br/>
     
       <label for="text">
         Body Text
       </label>
-      <input name="text" id="foo">
+      <input name="text" id="text">
       <br/>
     
       <button onClick="writeUserData" type="submit">
@@ -80,8 +80,8 @@
     function writeUserData() {
       const db = getDatabase();
       set(ref(db, "users/" + messagingSenderId), {
-        Title: document.getElementById("title").value,
-        Conten: document.getElementById("content").value,
+        title: document.getElementById("title").value,
+        text: document.getElementById("text").value,
       });
     }
   </script>
