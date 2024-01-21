@@ -81,7 +81,7 @@
 
     function writeUserData() {
       console.log("Hello World")
-      firebase.database().ref('users/'+messagingSenderId).set({
+      db.ref('users/'+messagingSenderId).set({
         title: document.getElementById("title").value,
         text: document.getElementById("text").value,
       });
