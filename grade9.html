@@ -37,7 +37,7 @@
       <input name="text" id="text">
       <br/>
 
-      <button onclick="writeUserData" type="submit">
+      <button onclick="writeUserData(); return false;"type="submit">
         Submit
       </button>
       
@@ -85,7 +85,6 @@
         title: document.getElementById("title").value,
         text: document.getElementById("text").value,
       });
-      return false;
     }
   </script>
 </body>
