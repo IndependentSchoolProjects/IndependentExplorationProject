@@ -43,7 +43,6 @@
       
     </form>
   </div>
-  <br/>
 
   <div class = "post">
     <h2>
@@ -53,7 +52,6 @@
       </ul>
     </p>
   </div>
-  <br/>
 
   <!--taken from firebase official documentation-->
   <script type="module">
@@ -87,12 +85,21 @@
     window.insertPost = function() {
       var title = document.getElementById("title").value;
       var text = document.getElementById("text").value;
+      console.log(title);
+      console.log(text);
       set(push(refPost), {
         title: title,
         text: text,
+      }).then(() => {
+        console.log("success");
+      }).catch((error) => {
+        console.log("failed")
+      })
     }
 
     onChildAdded(refPost, data => {
+      console.log('child added');
+      console.log(data.val());
       var title = data.val().title;
       var text = data.val().text;
       var node = document.createElement("li");
@@ -101,6 +108,12 @@
       node.appendChild(titleNode);
       node.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
+    });
+    onChildChanged(refPost, data => {
+      console.log('child changed');
+    });
+    onChildRemoved(refPost, data => {
+      console.log('child removed');
     });
   </script>
 </body>
