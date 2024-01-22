@@ -99,6 +99,11 @@
       var title = data.val().title;
       var text = data.val().text;
       var node = document.createElement("li");
+      var titleDiv = document.createElement("div");
+      var textDiv = document.createElement("div");
+      var titleNode = document.createTextNode(title);
+      var textNode = document.createTextNode(text);
+      titleDiv.appendChild(titleNode);
       textDiv.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
     });
