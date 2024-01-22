@@ -23,24 +23,99 @@
     <h2>
       Create New Post
     </h2>
-    
+
     <form>
       <label for="title">
         Post Title
       </label>
-      <input name="title">
+      <input name="title" id="title">
       <br/>
-  
+    
       <label for="text">
         Body Text
       </label>
-      <input name="text">
+      <input name="text" id="text">
       <br/>
-  
-      <input type="submit" value="Submit">
+
+      <button onclick="insertPost(); return false" type="submit">
+        Submit
+      </button>
+      
     </form>
-    
   </div>
+
+  <div class = "post">
+    <h2>
+    </h2>
+    <p>
+      <ul>
+      </ul>
+    </p>
+  </div>
+
+  <!--taken from firebase official documentation-->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import { getDatabase, ref, push, set, onChildAdded, onChildChanged, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAA0kCR0cUWYTbFHd02HYy6NyxNW0iOPNk",
+      authDomain: "independentschoolproject.firebaseapp.com",
+      databaseURL: "https://independentschoolproject-default-rtdb.firebaseio.com",
+      projectId: "independentschoolproject",
+      storageBucket: "independentschoolproject.appspot.com",
+      messagingSenderId: "890951439386",
+      appId: "1:890951439386:web:6163d3fd134b9948626da3",
+      measurementId: "G-NWM3EPKZY2"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const analytics = getAnalytics(app);
+
+    const refPost = ref(db, 'g11');
+
+    window.insertPost = function() {
+      var title = document.getElementById("title").value;
+      var text = document.getElementById("text").value;
+      console.log(title);
+      console.log(text);
+      set(push(refPost), {
+        title: title,
+        text: text,
+      }).then(() => {
+        console.log("success");
+      }).catch((error) => {
+        console.log("failed")
+      })
+    }
+
+    onChildAdded(refPost, data => {
+      console.log('child added');
+      console.log(data.val());
+      var title = data.val().title;
+      var text = data.val().text;
+      var node = document.createElement("li");
+      var titleNode = document.createTextNode(title);
+      var textNode = document.createTextNode(text);
+      node.appendChild(titleNode);
+      node.appendChild(textNode);
+      document.getElementsByTagName("ul")[0].appendChild(node);
+    });
+    onChildChanged(refPost, data => {
+      console.log('child changed');
+    });
+    onChildRemoved(refPost, data => {
+      console.log('child removed');
+    });
+  </script>
 </body>
 
 </html>
