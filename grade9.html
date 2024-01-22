@@ -45,8 +45,6 @@
   </div>
 
   <div class = "post">
-    <h2>
-    </h2>
     <p>
       <ul>
       </ul>
@@ -88,12 +86,7 @@
       set(push(refPost), {
         title: title,
         text: text,
-      }).then(() => {
-        console.log("success");
-      }).catch((error) => {
-        console.log("failed")
-      })
-    }
+      });
 
     onChildAdded(refPost, data => {
       var title = data.val().title;
@@ -106,12 +99,6 @@
       titleDiv.appendChild(titleNode);
       textDiv.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
-    });
-    onChildChanged(refPost, data => {
-      console.log('child changed');
-    });
-    onChildRemoved(refPost, data => {
-      console.log('child removed');
     });
   </script>
 </body>
