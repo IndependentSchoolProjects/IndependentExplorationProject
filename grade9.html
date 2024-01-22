@@ -102,9 +102,9 @@
       console.log(data.val());
       var title = data.val().title;
       var text = data.val().text;
-      var Node = document.createElement("li");
+      var node = document.createElement("li");
       var titleNode = document.createTextNode(title);
-      var textnode = document.createTextNode(text);
+      var textNode = document.createTextNode(text);
       node.appendChild(titleNode);
       node.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
