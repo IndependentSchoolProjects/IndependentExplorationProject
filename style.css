@@ -8,7 +8,7 @@ body {
 }
 
 /*Fonts*/
-h1, h2, h3, p, a:link, a:visited, label{
+h1, h2, h3, p, a:link, a:visited, label, ul{
     color: rgb(255, 255, 255);
 }
 
@@ -20,7 +20,7 @@ h1, h2, a, input {
     font-family: 'Courier New', monospace;
 }
 
-h3, p, label {
+ul, p, label {
     font-family: Verdana, sans-serif;
 }
 
