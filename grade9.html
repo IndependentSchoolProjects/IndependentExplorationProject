@@ -37,7 +37,7 @@
       <input name="text" id="text">
       <br/>
 
-      <button onclick=insertPost() type="submit">
+      <button onclick="insertPost(); return false" type="submit">
         Submit
       </button>
       
@@ -83,8 +83,8 @@
     const refPost = ref(db, 'g9/post');
 
     window.insertPost = function() {
-      title = document.getElementById("title").value;
-      text = document.getElementById("text").value;
+      var title = document.getElementById("title").value;
+      var text = document.getElementById("text").value;
       console.log(title);
       console.log(text);
       set(push(refPost), {
