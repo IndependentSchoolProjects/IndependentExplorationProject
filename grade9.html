@@ -99,6 +99,7 @@
 
     onChildAdded(refPost, data => {
       console.log('child added');
+      console.log(data.val);
       title = data.val().title;
       text = data.val().text;
       var node = document.createElement("li");
