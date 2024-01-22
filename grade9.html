@@ -109,8 +109,8 @@
       var textNode = document.createTextNode(text);
       node.appendChild(title);
       node.appendChild(text);
-      node.appendChild(titleNode);
-      node.appendChild(textNode);
+      title.appendChild(titleNode);
+      text.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
     });
     onChildChanged(refPost, data => {
