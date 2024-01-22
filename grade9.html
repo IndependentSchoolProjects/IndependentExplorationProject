@@ -73,22 +73,29 @@
       measurementId: "G-NWM3EPKZY2"
     };
   
-    // Initialize Firebase
+// Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     const analytics = getAnalytics(app);
-
     const refPost = ref(db, 'g9');
-
     window.insertPost = function() {
       var title = document.getElementById("title").value;
       var text = document.getElementById("text").value;
+      console.log(title);
+      console.log(text);
       set(push(refPost), {
         title: title,
         text: text,
       });
+      }).then(() => {
+        console.log("success");
+      }).catch((error) => {
+        console.log("failed")
+      })
+    }
 
     onChildAdded(refPost, data => {
+      console.log('child added');
       var title = data.val().title;
       var text = data.val().text;
       var node = document.createElement("li");
@@ -96,9 +103,17 @@
       var textDiv = document.createElement("div");
       var titleNode = document.createTextNode(title);
       var textNode = document.createTextNode(text);
+      node.appendChild(titleDiv);
+      node.appendChild(textDiv);
       titleDiv.appendChild(titleNode);
       textDiv.appendChild(textNode);
       document.getElementsByTagName("ul")[0].appendChild(node);
+    });
+    onChildChanged(refPost, data => {
+      console.log('child changed');
+    });
+    onChildRemoved(refPost, data => {
+      console.log('child removed');
     });
   </script>
 </body>
