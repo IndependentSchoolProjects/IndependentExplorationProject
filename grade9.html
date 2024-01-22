@@ -49,6 +49,8 @@
     <h2>
     </h2>
     <p>
+      <ul>
+      </ul>
     </p>
   </div>
   <br/>
@@ -93,12 +95,12 @@
     onChildAdded(refPost, data => {
       var title = data.val().title;
       var text = data.val().text;
-      var node = document.createElement("p");
+      var node = document.createElement("li");
       var titleNode = document.createTextNode(title);
       var textNode = document.createTextNode(text);
       node.appendChild(titleNode);
       node.appendChild(textNode);
-      document.getElementsByTagName("p")[0].appendChild(node);
+      document.getElementsByTagName("ul")[0].appendChild(node);
     });
   </script>
 </body>
