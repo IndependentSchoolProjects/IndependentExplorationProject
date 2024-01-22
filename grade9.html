@@ -99,14 +99,13 @@
 
     onChildAdded(refPost, data => {
       console.log('child added');
-      console.log(data.val());
       var title = data.val().title;
       var text = data.val().text;
       var node = document.createElement("li");
-      var title = document.createElement("div");
-      var text = document.createElement("div");
-      var titleDiv = document.createTextNode(title);
-      var textDiv = document.createTextNode(text);
+      var titleDiv = document.createElement("div");
+      var textDiv = document.createElement("div");
+      var titleNode = document.createTextNode(title);
+      var textNode = document.createTextNode(text);
       node.appendChild(titleDiv);
       node.appendChild(textDiv);
       titleDiv.appendChild(titleNode);
